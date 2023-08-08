@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ADMIN.master.cs" Inherits="MT_e_SATIS.ADMIN" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: transparent; background-image: url(/beyazwp6.jpg); background-position: center center;background-repeat:no-repeat;margin:0px 0px 0px 0px;background-size:100%;padding:0px 0px 0px 0px;">
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">EKSİĞİN KALMASIN</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="\MUSTERILER\MUSTERILER.aspx">MÜŞTERİLER</a></li>
+      <li><a href="\URUN\URUNLER.aspx">ÜRÜNLER</a></li>
+      <li><a href="\KATEGORILER.aspx">KATEGORİLER</a></li>
+      <li><a href="\PERSONELLER\PERSONELLER.aspx">PERSONELLER</a></li>
+      <li><a href="\SATISLAR\SATISLAR.aspx">SATIŞLAR</a></li>
+      <li><a href="\DUYURUOLUSTUR.aspx">DUYURU</a></li>
+      <li><a href="\ADMINMESAJLAR\ADMINMESAJLAR.aspx">MESAJLAR</a></li>
+      <li><a href="\AYARLAR\ADMINBILGI.aspx">AYARLAR</a></li>
+      <li><a href="\ISTATISTIKLER\ISTATISTIKLER.aspx">İSTATİSTİKLER</a></li>
+      <li><a href="\KULLANICISEC.aspx">ÇIKIŞ YAP</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+</div>
+
+</body>
+</html>
+

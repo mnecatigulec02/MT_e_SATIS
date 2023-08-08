@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f9a48ac888534277b3dd8264554b5dea" Name="Diagram1" ZoomLevel="54">
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Adminler" Width="1.5" PointX="12.125" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Duyurular" Width="1.5" PointX="5.625" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Kategoriler" Width="1.5" PointX="3.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.TBL_MESAJLAR" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Musteriler" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Personeller" Width="1.5" PointX="6.375" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Saticilar" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Satislar" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.TBL_SEPETLER" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Urunler" Width="1.5" PointX="9.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_e_SATISModel.Tbl_Yorumlar" Width="1.5" PointX="8.25" PointY="5.75" IsExpanded="true" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_TBL_MESAJLAR_Tbl_Adminler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Urunler_Tbl_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_TBL_MESAJLAR_Tbl_Musteriler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Satislar_Tbl_Musteriler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_TBL_SEPETLER_Tbl_Musteriler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Yorumlar_Tbl_Musteriler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Satislar_Tbl_Personeller" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Satislar_Tbl_Saticilar" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Urunler_Tbl_Saticilar" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Satislar_Tbl_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_TBL_SEPETLER_Tbl_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Yorumlar_Tbl_Urunler" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_e_SATISModel.FK_Tbl_Duyurular_Tbl_Adminler" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

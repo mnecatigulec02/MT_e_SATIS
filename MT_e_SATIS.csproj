@@ -1,0 +1,624 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E7F14F3B-28C4-4CE8-95ED-4A32D55E669F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MT_e_SATIS</RootNamespace>
+    <AssemblyName>MT_e_SATIS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44349</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMINMESAJLAR\ADMINMESAJLAR.aspx" />
+    <Content Include="ADMINMESAJLAR\ADMINMESAJYANITLA.aspx" />
+    <Content Include="avatar.png" />
+    <Content Include="AYARLAR\ADMINBILGI.aspx" />
+    <Content Include="beyazwp1.jpg" />
+    <Content Include="beyazwp2.jpg" />
+    <Content Include="beyazwp4.jpg" />
+    <Content Include="beyazwp5.jpg" />
+    <Content Include="beyazwp6.jpg" />
+    <Content Include="bgimageblue.jpg" />
+    <Content Include="blackwp1.jpg" />
+    <Content Include="bluepurplebgcolor.jpg" />
+    <Content Include="camasirmakinesi.jpg" />
+    <Content Include="CIKISYAP.aspx" />
+    <Content Include="DUYURUOLUSTUR.aspx" />
+    <Content Include="e-satis_wllppr.jpg" />
+    <Content Include="Entity\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entity\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="ISTATISTIKLER\ISTATISTIKLER.aspx" />
+    <Content Include="KATEGORIEKLE.aspx" />
+    <Content Include="KATEGORIGUNCELLE.aspx" />
+    <Content Include="KATEGORILER.aspx" />
+    <Content Include="KATEGORISIL.aspx" />
+    <Content Include="KULLANICISEC.aspx" />
+    <Content Include="login-avatar-23.png" />
+    <Content Include="LOGIN.aspx" />
+    <Content Include="MUSTERIBILGIGUNCELLE\MUSTERIBILGIGUNCELLE.aspx" />
+    <Content Include="MUSTERILER\MUSTERIGUNCELLE.aspx" />
+    <Content Include="MUSTERILER\MUSTERILER.aspx" />
+    <Content Include="MUSTERILER\MUSTERISIL.aspx" />
+    <Content Include="MUSTERIMODULU\bluepurplebgcolor.jpg" />
+    <Content Include="MUSTERIMODULU\DUYURULAR.aspx" />
+    <Content Include="MUSTERIMODULU\KATEGORILENMISURUNLER.aspx" />
+    <Content Include="MUSTERIMODULU\MESAJLARIM.aspx" />
+    <Content Include="MUSTERIMODULU\MESAJOLUSTUR.aspx" />
+    <Content Include="MUSTERIMODULU\MLOGIN.aspx" />
+    <Content Include="MUSTERIMODULU\MUSTERIKATEGORILER.aspx" />
+    <Content Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\MUSTERISEPET.aspx" />
+    <Content Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\SATINAL.aspx" />
+    <Content Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\URUNINCELE.aspx" />
+    <Content Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\URUNINCELE2.aspx" />
+    <Content Include="MUSTERIMODULU\MUSTERIURUNLER.aspx" />
+    <Content Include="MUSTERIMODULU\YORUMISLEMLERI\YORUMYAP.aspx" />
+    <Content Include="PERSONELLER\PERSONELEKLE.aspx" />
+    <Content Include="PERSONELLER\PERSONELGUNCELLE.aspx" />
+    <Content Include="PERSONELLER\PERSONELLER.aspx" />
+    <Content Include="PERSONELLER\PERSONELSIL.aspx" />
+    <Content Include="SATICIAYARLAR\SATICIBILGIGUNCELLE.aspx" />
+    <Content Include="SATICIDUYURULAR\SATICIDUYURULAR.aspx" />
+    <Content Include="SATICIISTATISTIKLER\SATICIISTATISTIKLER.aspx" />
+    <Content Include="SATICISATISLAR\SATICISATISLAR.aspx" />
+    <Content Include="SATICIURUN\SATICIURUNEKLE.aspx" />
+    <Content Include="SATICIURUN\SATICIURUNGUNCELLE.aspx" />
+    <Content Include="SATICIURUN\SATICIURUNLER.aspx" />
+    <Content Include="SATICIURUN\SATICIURUNSIL.aspx" />
+    <Content Include="SATISLAR\SATISEKLE.aspx" />
+    <Content Include="SATISLAR\SATISLAR.aspx" />
+    <Content Include="SATISLAR\SATISSIL.aspx" />
+    <Content Include="SLOGIN.aspx" />
+    <Content Include="URUN\URUNGUNCELLE.aspx" />
+    <Content Include="URUN\URUNLER.aspx" />
+    <Content Include="URUN\URUNSIL.aspx" />
+    <Content Include="URUN\YENIURUN.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="whitebg2.jpg" />
+    <Content Include="whitebg3.jpg" />
+    <Content Include="whitebg4.jpg" />
+    <Content Include="whitebgimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ADMIN.Master.cs">
+      <DependentUpon>ADMIN.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN.Master.designer.cs">
+      <DependentUpon>ADMIN.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINMESAJLAR\ADMINMESAJLAR.aspx.cs">
+      <DependentUpon>ADMINMESAJLAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINMESAJLAR\ADMINMESAJLAR.aspx.designer.cs">
+      <DependentUpon>ADMINMESAJLAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ADMINMESAJLAR\ADMINMESAJYANITLA.aspx.cs">
+      <DependentUpon>ADMINMESAJYANITLA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMINMESAJLAR\ADMINMESAJYANITLA.aspx.designer.cs">
+      <DependentUpon>ADMINMESAJYANITLA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AYARLAR\ADMINBILGI.aspx.cs">
+      <DependentUpon>ADMINBILGI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AYARLAR\ADMINBILGI.aspx.designer.cs">
+      <DependentUpon>ADMINBILGI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CIKISYAP.aspx.cs">
+      <DependentUpon>CIKISYAP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CIKISYAP.aspx.designer.cs">
+      <DependentUpon>CIKISYAP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DUYURUOLUSTUR.aspx.cs">
+      <DependentUpon>DUYURUOLUSTUR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DUYURUOLUSTUR.aspx.designer.cs">
+      <DependentUpon>DUYURUOLUSTUR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Adminler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Duyurular.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Kategoriler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_MESAJLAR.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Musteriler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Personeller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Saticilar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Satislar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_SEPETLER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Urunler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\Tbl_Yorumlar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ISTATISTIKLER\ISTATISTIKLER.aspx.cs">
+      <DependentUpon>ISTATISTIKLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ISTATISTIKLER\ISTATISTIKLER.aspx.designer.cs">
+      <DependentUpon>ISTATISTIKLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KATEGORIEKLE.aspx.cs">
+      <DependentUpon>KATEGORIEKLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KATEGORIEKLE.aspx.designer.cs">
+      <DependentUpon>KATEGORIEKLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KATEGORIGUNCELLE.aspx.cs">
+      <DependentUpon>KATEGORIGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KATEGORIGUNCELLE.aspx.designer.cs">
+      <DependentUpon>KATEGORIGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KATEGORILER.aspx.cs">
+      <DependentUpon>KATEGORILER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KATEGORILER.aspx.designer.cs">
+      <DependentUpon>KATEGORILER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KATEGORISIL.aspx.cs">
+      <DependentUpon>KATEGORISIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KATEGORISIL.aspx.designer.cs">
+      <DependentUpon>KATEGORISIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KULLANICISEC.aspx.cs">
+      <DependentUpon>KULLANICISEC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KULLANICISEC.aspx.designer.cs">
+      <DependentUpon>KULLANICISEC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.aspx.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LOGIN.aspx.designer.cs">
+      <DependentUpon>LOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERI.Master.cs">
+      <DependentUpon>MUSTERI.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERI.Master.designer.cs">
+      <DependentUpon>MUSTERI.Master</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIBILGIGUNCELLE\MUSTERIBILGIGUNCELLE.aspx.cs">
+      <DependentUpon>MUSTERIBILGIGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIBILGIGUNCELLE\MUSTERIBILGIGUNCELLE.aspx.designer.cs">
+      <DependentUpon>MUSTERIBILGIGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERILER\MUSTERIGUNCELLE.aspx.cs">
+      <DependentUpon>MUSTERIGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERILER\MUSTERIGUNCELLE.aspx.designer.cs">
+      <DependentUpon>MUSTERIGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERILER\MUSTERILER.aspx.cs">
+      <DependentUpon>MUSTERILER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERILER\MUSTERILER.aspx.designer.cs">
+      <DependentUpon>MUSTERILER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERILER\MUSTERISIL.aspx.cs">
+      <DependentUpon>MUSTERISIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERILER\MUSTERISIL.aspx.designer.cs">
+      <DependentUpon>MUSTERISIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\DUYURULAR.aspx.cs">
+      <DependentUpon>DUYURULAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\DUYURULAR.aspx.designer.cs">
+      <DependentUpon>DUYURULAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\KATEGORILENMISURUNLER.aspx.cs">
+      <DependentUpon>KATEGORILENMISURUNLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\KATEGORILENMISURUNLER.aspx.designer.cs">
+      <DependentUpon>KATEGORILENMISURUNLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MESAJLARIM.aspx.cs">
+      <DependentUpon>MESAJLARIM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MESAJLARIM.aspx.designer.cs">
+      <DependentUpon>MESAJLARIM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MESAJOLUSTUR.aspx.cs">
+      <DependentUpon>MESAJOLUSTUR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MESAJOLUSTUR.aspx.designer.cs">
+      <DependentUpon>MESAJOLUSTUR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MLOGIN.aspx.cs">
+      <DependentUpon>MLOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MLOGIN.aspx.designer.cs">
+      <DependentUpon>MLOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIKATEGORILER.aspx.cs">
+      <DependentUpon>MUSTERIKATEGORILER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIKATEGORILER.aspx.designer.cs">
+      <DependentUpon>MUSTERIKATEGORILER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\MUSTERISEPET.aspx.cs">
+      <DependentUpon>MUSTERISEPET.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\MUSTERISEPET.aspx.designer.cs">
+      <DependentUpon>MUSTERISEPET.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\SATINAL.aspx.cs">
+      <DependentUpon>SATINAL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\SATINAL.aspx.designer.cs">
+      <DependentUpon>SATINAL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\URUNINCELE.aspx.cs">
+      <DependentUpon>URUNINCELE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\URUNINCELE.aspx.designer.cs">
+      <DependentUpon>URUNINCELE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\URUNINCELE2.aspx.cs">
+      <DependentUpon>URUNINCELE2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNISLEMLERI\URUNINCELE2.aspx.designer.cs">
+      <DependentUpon>URUNINCELE2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNLER.aspx.cs">
+      <DependentUpon>MUSTERIURUNLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\MUSTERIURUNLER.aspx.designer.cs">
+      <DependentUpon>MUSTERIURUNLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\YORUMISLEMLERI\YORUMYAP.aspx.cs">
+      <DependentUpon>YORUMYAP.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MUSTERIMODULU\YORUMISLEMLERI\YORUMYAP.aspx.designer.cs">
+      <DependentUpon>YORUMYAP.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELEKLE.aspx.cs">
+      <DependentUpon>PERSONELEKLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELEKLE.aspx.designer.cs">
+      <DependentUpon>PERSONELEKLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELGUNCELLE.aspx.cs">
+      <DependentUpon>PERSONELGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELGUNCELLE.aspx.designer.cs">
+      <DependentUpon>PERSONELGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELLER.aspx.cs">
+      <DependentUpon>PERSONELLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELLER.aspx.designer.cs">
+      <DependentUpon>PERSONELLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELSIL.aspx.cs">
+      <DependentUpon>PERSONELSIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PERSONELLER\PERSONELSIL.aspx.designer.cs">
+      <DependentUpon>PERSONELSIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SATICI.Master.cs">
+      <DependentUpon>SATICI.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICI.Master.designer.cs">
+      <DependentUpon>SATICI.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIAYARLAR\SATICIBILGIGUNCELLE.aspx.cs">
+      <DependentUpon>SATICIBILGIGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIAYARLAR\SATICIBILGIGUNCELLE.aspx.designer.cs">
+      <DependentUpon>SATICIBILGIGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIDUYURULAR\SATICIDUYURULAR.aspx.cs">
+      <DependentUpon>SATICIDUYURULAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIDUYURULAR\SATICIDUYURULAR.aspx.designer.cs">
+      <DependentUpon>SATICIDUYURULAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIISTATISTIKLER\SATICIISTATISTIKLER.aspx.cs">
+      <DependentUpon>SATICIISTATISTIKLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIISTATISTIKLER\SATICIISTATISTIKLER.aspx.designer.cs">
+      <DependentUpon>SATICIISTATISTIKLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICISATISLAR\SATICISATISLAR.aspx.cs">
+      <DependentUpon>SATICISATISLAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICISATISLAR\SATICISATISLAR.aspx.designer.cs">
+      <DependentUpon>SATICISATISLAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNEKLE.aspx.cs">
+      <DependentUpon>SATICIURUNEKLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNEKLE.aspx.designer.cs">
+      <DependentUpon>SATICIURUNEKLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNGUNCELLE.aspx.cs">
+      <DependentUpon>SATICIURUNGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNGUNCELLE.aspx.designer.cs">
+      <DependentUpon>SATICIURUNGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNLER.aspx.cs">
+      <DependentUpon>SATICIURUNLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNLER.aspx.designer.cs">
+      <DependentUpon>SATICIURUNLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNSIL.aspx.cs">
+      <DependentUpon>SATICIURUNSIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATICIURUN\SATICIURUNSIL.aspx.designer.cs">
+      <DependentUpon>SATICIURUNSIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATISLAR\SATISEKLE.aspx.cs">
+      <DependentUpon>SATISEKLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATISLAR\SATISEKLE.aspx.designer.cs">
+      <DependentUpon>SATISEKLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATISLAR\SATISLAR.aspx.cs">
+      <DependentUpon>SATISLAR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATISLAR\SATISLAR.aspx.designer.cs">
+      <DependentUpon>SATISLAR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SATISLAR\SATISSIL.aspx.cs">
+      <DependentUpon>SATISSIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SATISLAR\SATISSIL.aspx.designer.cs">
+      <DependentUpon>SATISSIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SLOGIN.aspx.cs">
+      <DependentUpon>SLOGIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SLOGIN.aspx.designer.cs">
+      <DependentUpon>SLOGIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URUN\URUNGUNCELLE.aspx.cs">
+      <DependentUpon>URUNGUNCELLE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URUN\URUNGUNCELLE.aspx.designer.cs">
+      <DependentUpon>URUNGUNCELLE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URUN\URUNLER.aspx.cs">
+      <DependentUpon>URUNLER.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URUN\URUNLER.aspx.designer.cs">
+      <DependentUpon>URUNLER.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URUN\URUNSIL.aspx.cs">
+      <DependentUpon>URUNSIL.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URUN\URUNSIL.aspx.designer.cs">
+      <DependentUpon>URUNSIL.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="URUN\YENIURUN.aspx.cs">
+      <DependentUpon>YENIURUN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="URUN\YENIURUN.aspx.designer.cs">
+      <DependentUpon>YENIURUN.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN.Master" />
+    <Content Include="MUSTERI.Master" />
+    <EntityDeploy Include="Entity\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Entity\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="SATICI.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62791</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44349/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

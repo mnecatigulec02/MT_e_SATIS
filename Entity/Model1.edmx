@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_e_SATISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_Adminler">
+          <Key>
+            <PropertyRef Name="ADMINID" />
+          </Key>
+          <Property Name="ADMINID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ADMINADSOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="ADMINTELEFON" Type="varchar" MaxLength="50" />
+          <Property Name="ADMINMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="ADMINCINSIYET" Type="varchar" MaxLength="10" />
+          <Property Name="ADMINKULLANICIADI" Type="varchar" MaxLength="50" />
+          <Property Name="ADMINSIFRE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Duyurular">
+          <Key>
+            <PropertyRef Name="DUYURUID" />
+          </Key>
+          <Property Name="DUYURUID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DUYURUMETNI" Type="varchar" MaxLength="500" />
+          <Property Name="DUYURUYAPAN" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Kategoriler">
+          <Key>
+            <PropertyRef Name="KATEGORIID" />
+          </Key>
+          <Property Name="KATEGORIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KATEGORIAD" Type="varchar" MaxLength="50" />
+          <Property Name="DURUM" Type="bit" />
+        </EntityType>
+        <EntityType Name="TBL_MESAJLAR">
+          <Key>
+            <PropertyRef Name="MESAJID" />
+          </Key>
+          <Property Name="MESAJID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GONDEREN" Type="int" />
+          <Property Name="ALAN" Type="int" />
+          <Property Name="MESAJICERIK" Type="varchar" MaxLength="500" />
+          <Property Name="KONU" Type="varchar" MaxLength="100" />
+          <Property Name="ADMINYANIT" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Musteriler">
+          <Key>
+            <PropertyRef Name="MUSTERIID" />
+          </Key>
+          <Property Name="MUSTERIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERIAD" Type="varchar" MaxLength="20" />
+          <Property Name="MUSTERISOYAD" Type="varchar" MaxLength="20" />
+          <Property Name="MUSTERIDURUM" Type="bit" />
+          <Property Name="MUSTERIKULLANICIADI" Type="varchar" MaxLength="50" />
+          <Property Name="MUSTERISIFRE" Type="varchar" MaxLength="50" />
+          <Property Name="MUSTERITELEFON" Type="varchar" MaxLength="30" />
+          <Property Name="MUSTERIMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="MUSTERIADRES" Type="varchar" MaxLength="100" />
+          <Property Name="MUSTERIBUTCE" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="Tbl_Personeller">
+          <Key>
+            <PropertyRef Name="PERSONELID" />
+          </Key>
+          <Property Name="PERSONELID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PERSONELADSOYAD" Type="varchar" MaxLength="60" />
+          <Property Name="PERSONELTELEFON" Type="varchar" MaxLength="50" />
+          <Property Name="PERSONELMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="PERSONELCINSIYET" Type="varchar" MaxLength="10" />
+          <Property Name="PERSONELDURUM" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tbl_Saticilar">
+          <Key>
+            <PropertyRef Name="SATICID" />
+          </Key>
+          <Property Name="SATICID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SATICIADSOYAD" Type="varchar" MaxLength="50" />
+          <Property Name="SATICITELEFON" Type="varchar" MaxLength="30" />
+          <Property Name="SATICIMAIL" Type="varchar" MaxLength="50" />
+          <Property Name="SATICICINSIYET" Type="varchar" MaxLength="10" />
+          <Property Name="SATICIKULLANICIADI" Type="varchar" MaxLength="20" />
+          <Property Name="SATICISIFRE" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Tbl_Satislar">
+          <Key>
+            <PropertyRef Name="SATISID" />
+          </Key>
+          <Property Name="SATISID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URUN" Type="int" />
+          <Property Name="PERSONEL" Type="int" />
+          <Property Name="MUSTERI" Type="int" />
+          <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DURUM" Type="bit" />
+          <Property Name="SATICISID" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_SEPETLER">
+          <Key>
+            <PropertyRef Name="SEPETID" />
+          </Key>
+          <Property Name="SEPETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERISID" Type="int" Nullable="false" />
+          <Property Name="URUNSID" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Urunler">
+          <Key>
+            <PropertyRef Name="URUNID" />
+          </Key>
+          <Property Name="URUNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SATICIUID" Type="int" />
+          <Property Name="URUNAD" Type="varchar" MaxLength="30" />
+          <Property Name="URUNMARKA" Type="varchar" MaxLength="30" />
+          <Property Name="URUNKATEGORI" Type="int" />
+          <Property Name="URUNFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="URUNSTOK" Type="int" />
+          <Property Name="DURUM" Type="bit" />
+          <Property Name="URUNFOTO" Type="varchar" MaxLength="100" />
+          <Property Name="URUNDETAY" Type="varchar" MaxLength="8000" />
+        </EntityType>
+        <EntityType Name="Tbl_Yorumlar">
+          <Key>
+            <PropertyRef Name="YORUMID" />
+          </Key>
+          <Property Name="YORUMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MUSTERIYID" Type="int" />
+          <Property Name="YORUMMETNI" Type="varchar" MaxLength="480" />
+          <Property Name="URUNYID" Type="int" />
+        </EntityType>
+        <Association Name="FK_Tbl_Duyurular_Tbl_Adminler">
+          <End Role="Tbl_Adminler" Type="Self.Tbl_Adminler" Multiplicity="0..1" />
+          <End Role="Tbl_Duyurular" Type="Self.Tbl_Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Adminler">
+              <PropertyRef Name="ADMINID" />
+            </Principal>
+            <Dependent Role="Tbl_Duyurular">
+              <PropertyRef Name="DUYURUYAPAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MESAJLAR_Tbl_Adminler">
+          <End Role="Tbl_Adminler" Type="Self.Tbl_Adminler" Multiplicity="0..1" />
+          <End Role="TBL_MESAJLAR" Type="Self.TBL_MESAJLAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Adminler">
+              <PropertyRef Name="ADMINID" />
+            </Principal>
+            <Dependent Role="TBL_MESAJLAR">
+              <PropertyRef Name="ALAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MESAJLAR_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="0..1" />
+          <End Role="TBL_MESAJLAR" Type="Self.TBL_MESAJLAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="TBL_MESAJLAR">
+              <PropertyRef Name="GONDEREN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="MUSTERI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Personeller">
+          <End Role="Tbl_Personeller" Type="Self.Tbl_Personeller" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Personeller">
+              <PropertyRef Name="PERSONELID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="PERSONEL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Saticilar">
+          <End Role="Tbl_Saticilar" Type="Self.Tbl_Saticilar" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Saticilar">
+              <PropertyRef Name="SATICID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="SATICISID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Urunler">
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urunler">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="URUN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SEPETLER_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="1" />
+          <End Role="TBL_SEPETLER" Type="Self.TBL_SEPETLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="TBL_SEPETLER">
+              <PropertyRef Name="MUSTERISID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SEPETLER_Tbl_Urunler">
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="0..1" />
+          <End Role="TBL_SEPETLER" Type="Self.TBL_SEPETLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urunler">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="TBL_SEPETLER">
+              <PropertyRef Name="URUNSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Urunler_Tbl_Kategoriler">
+          <End Role="Tbl_Kategoriler" Type="Self.Tbl_Kategoriler" Multiplicity="0..1" />
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Kategoriler">
+              <PropertyRef Name="KATEGORIID" />
+            </Principal>
+            <Dependent Role="Tbl_Urunler">
+              <PropertyRef Name="URUNKATEGORI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Urunler_Tbl_Saticilar">
+          <End Role="Tbl_Saticilar" Type="Self.Tbl_Saticilar" Multiplicity="0..1" />
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Saticilar">
+              <PropertyRef Name="SATICID" />
+            </Principal>
+            <Dependent Role="Tbl_Urunler">
+              <PropertyRef Name="SATICIUID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Yorumlar_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="0..1" />
+          <End Role="Tbl_Yorumlar" Type="Self.Tbl_Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="Tbl_Yorumlar">
+              <PropertyRef Name="MUSTERIYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Yorumlar_Tbl_Urunler">
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="0..1" />
+          <End Role="Tbl_Yorumlar" Type="Self.Tbl_Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urunler">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="Tbl_Yorumlar">
+              <PropertyRef Name="URUNYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_e_SATISModelStoreContainer">
+          <EntitySet Name="Tbl_Adminler" EntityType="Self.Tbl_Adminler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Duyurular" EntityType="Self.Tbl_Duyurular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Kategoriler" EntityType="Self.Tbl_Kategoriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_MESAJLAR" EntityType="Self.TBL_MESAJLAR" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Musteriler" EntityType="Self.Tbl_Musteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Personeller" EntityType="Self.Tbl_Personeller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Saticilar" EntityType="Self.Tbl_Saticilar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Satislar" EntityType="Self.Tbl_Satislar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SEPETLER" EntityType="Self.TBL_SEPETLER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Urunler" EntityType="Self.Tbl_Urunler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Yorumlar" EntityType="Self.Tbl_Yorumlar" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Tbl_Duyurular_Tbl_Adminler" Association="Self.FK_Tbl_Duyurular_Tbl_Adminler">
+            <End Role="Tbl_Adminler" EntitySet="Tbl_Adminler" />
+            <End Role="Tbl_Duyurular" EntitySet="Tbl_Duyurular" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MESAJLAR_Tbl_Adminler" Association="Self.FK_TBL_MESAJLAR_Tbl_Adminler">
+            <End Role="Tbl_Adminler" EntitySet="Tbl_Adminler" />
+            <End Role="TBL_MESAJLAR" EntitySet="TBL_MESAJLAR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MESAJLAR_Tbl_Musteriler" Association="Self.FK_TBL_MESAJLAR_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="TBL_MESAJLAR" EntitySet="TBL_MESAJLAR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Musteriler" Association="Self.FK_Tbl_Satislar_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Personeller" Association="Self.FK_Tbl_Satislar_Tbl_Personeller">
+            <End Role="Tbl_Personeller" EntitySet="Tbl_Personeller" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Saticilar" Association="Self.FK_Tbl_Satislar_Tbl_Saticilar">
+            <End Role="Tbl_Saticilar" EntitySet="Tbl_Saticilar" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Urunler" Association="Self.FK_Tbl_Satislar_Tbl_Urunler">
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SEPETLER_Tbl_Musteriler" Association="Self.FK_TBL_SEPETLER_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="TBL_SEPETLER" EntitySet="TBL_SEPETLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SEPETLER_Tbl_Urunler" Association="Self.FK_TBL_SEPETLER_Tbl_Urunler">
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+            <End Role="TBL_SEPETLER" EntitySet="TBL_SEPETLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Urunler_Tbl_Kategoriler" Association="Self.FK_Tbl_Urunler_Tbl_Kategoriler">
+            <End Role="Tbl_Kategoriler" EntitySet="Tbl_Kategoriler" />
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Urunler_Tbl_Saticilar" Association="Self.FK_Tbl_Urunler_Tbl_Saticilar">
+            <End Role="Tbl_Saticilar" EntitySet="Tbl_Saticilar" />
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Yorumlar_Tbl_Musteriler" Association="Self.FK_Tbl_Yorumlar_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="Tbl_Yorumlar" EntitySet="Tbl_Yorumlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Yorumlar_Tbl_Urunler" Association="Self.FK_Tbl_Yorumlar_Tbl_Urunler">
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+            <End Role="Tbl_Yorumlar" EntitySet="Tbl_Yorumlar" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_e_SATISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Adminler">
+          <Key>
+            <PropertyRef Name="ADMINID" />
+          </Key>
+          <Property Name="ADMINID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADMINADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADMINTELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADMINMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADMINCINSIYET" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ADMINKULLANICIADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ADMINSIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TBL_MESAJLAR" Relationship="Self.FK_TBL_MESAJLAR_Tbl_Adminler" FromRole="Tbl_Adminler" ToRole="TBL_MESAJLAR" />
+          <NavigationProperty Name="Tbl_Duyurular" Relationship="DB_e_SATISModel.FK_Tbl_Duyurular_Tbl_Adminler" FromRole="Tbl_Adminler" ToRole="Tbl_Duyurular" />
+        </EntityType>
+        <EntityType Name="Tbl_Duyurular">
+          <Key>
+            <PropertyRef Name="DUYURUID" />
+          </Key>
+          <Property Name="DUYURUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DUYURUMETNI" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="DUYURUYAPAN" Type="Int32" />
+          <NavigationProperty Name="Tbl_Adminler" Relationship="DB_e_SATISModel.FK_Tbl_Duyurular_Tbl_Adminler" FromRole="Tbl_Duyurular" ToRole="Tbl_Adminler" />
+        </EntityType>
+        <EntityType Name="Tbl_Kategoriler">
+          <Key>
+            <PropertyRef Name="KATEGORIID" />
+          </Key>
+          <Property Name="KATEGORIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KATEGORIAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DURUM" Type="Boolean" />
+          <NavigationProperty Name="Tbl_Urunler" Relationship="Self.FK_Tbl_Urunler_Tbl_Kategoriler" FromRole="Tbl_Kategoriler" ToRole="Tbl_Urunler" />
+        </EntityType>
+        <EntityType Name="TBL_MESAJLAR">
+          <Key>
+            <PropertyRef Name="MESAJID" />
+          </Key>
+          <Property Name="MESAJID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GONDEREN" Type="Int32" />
+          <Property Name="ALAN" Type="Int32" />
+          <Property Name="MESAJICERIK" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="KONU" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ADMINYANIT" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Adminler" Relationship="Self.FK_TBL_MESAJLAR_Tbl_Adminler" FromRole="TBL_MESAJLAR" ToRole="Tbl_Adminler" />
+          <NavigationProperty Name="Tbl_Musteriler" Relationship="Self.FK_TBL_MESAJLAR_Tbl_Musteriler" FromRole="TBL_MESAJLAR" ToRole="Tbl_Musteriler" />
+        </EntityType>
+        <EntityType Name="Tbl_Musteriler">
+          <Key>
+            <PropertyRef Name="MUSTERIID" />
+          </Key>
+          <Property Name="MUSTERIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERIAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERISOYAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERIDURUM" Type="Boolean" />
+          <Property Name="MUSTERIKULLANICIADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERISIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERITELEFON" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERIMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERIADRES" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MUSTERIBUTCE" Type="Decimal" Precision="18" Scale="2" />
+          <NavigationProperty Name="TBL_MESAJLAR" Relationship="Self.FK_TBL_MESAJLAR_Tbl_Musteriler" FromRole="Tbl_Musteriler" ToRole="TBL_MESAJLAR" />
+          <NavigationProperty Name="Tbl_Satislar" Relationship="Self.FK_Tbl_Satislar_Tbl_Musteriler" FromRole="Tbl_Musteriler" ToRole="Tbl_Satislar" />
+          <NavigationProperty Name="TBL_SEPETLER" Relationship="Self.FK_TBL_SEPETLER_Tbl_Musteriler" FromRole="Tbl_Musteriler" ToRole="TBL_SEPETLER" />
+          <NavigationProperty Name="Tbl_Yorumlar" Relationship="Self.FK_Tbl_Yorumlar_Tbl_Musteriler" FromRole="Tbl_Musteriler" ToRole="Tbl_Yorumlar" />
+        </EntityType>
+        <EntityType Name="Tbl_Personeller">
+          <Key>
+            <PropertyRef Name="PERSONELID" />
+          </Key>
+          <Property Name="PERSONELID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PERSONELADSOYAD" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONELTELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONELMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONELCINSIYET" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="PERSONELDURUM" Type="Boolean" />
+          <NavigationProperty Name="Tbl_Satislar" Relationship="Self.FK_Tbl_Satislar_Tbl_Personeller" FromRole="Tbl_Personeller" ToRole="Tbl_Satislar" />
+        </EntityType>
+        <EntityType Name="Tbl_Saticilar">
+          <Key>
+            <PropertyRef Name="SATICID" />
+          </Key>
+          <Property Name="SATICID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SATICIADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SATICITELEFON" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SATICIMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SATICICINSIYET" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SATICIKULLANICIADI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SATICISIFRE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Satislar" Relationship="Self.FK_Tbl_Satislar_Tbl_Saticilar" FromRole="Tbl_Saticilar" ToRole="Tbl_Satislar" />
+          <NavigationProperty Name="Tbl_Urunler" Relationship="Self.FK_Tbl_Urunler_Tbl_Saticilar" FromRole="Tbl_Saticilar" ToRole="Tbl_Urunler" />
+        </EntityType>
+        <EntityType Name="Tbl_Satislar">
+          <Key>
+            <PropertyRef Name="SATISID" />
+          </Key>
+          <Property Name="SATISID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URUN" Type="Int32" />
+          <Property Name="PERSONEL" Type="Int32" />
+          <Property Name="MUSTERI" Type="Int32" />
+          <Property Name="FIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DURUM" Type="Boolean" />
+          <Property Name="SATICISID" Type="Int32" />
+          <NavigationProperty Name="Tbl_Musteriler" Relationship="Self.FK_Tbl_Satislar_Tbl_Musteriler" FromRole="Tbl_Satislar" ToRole="Tbl_Musteriler" />
+          <NavigationProperty Name="Tbl_Personeller" Relationship="Self.FK_Tbl_Satislar_Tbl_Personeller" FromRole="Tbl_Satislar" ToRole="Tbl_Personeller" />
+          <NavigationProperty Name="Tbl_Saticilar" Relationship="Self.FK_Tbl_Satislar_Tbl_Saticilar" FromRole="Tbl_Satislar" ToRole="Tbl_Saticilar" />
+          <NavigationProperty Name="Tbl_Urunler" Relationship="Self.FK_Tbl_Satislar_Tbl_Urunler" FromRole="Tbl_Satislar" ToRole="Tbl_Urunler" />
+        </EntityType>
+        <EntityType Name="TBL_SEPETLER">
+          <Key>
+            <PropertyRef Name="SEPETID" />
+          </Key>
+          <Property Name="SEPETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERISID" Type="Int32" Nullable="false" />
+          <Property Name="URUNSID" Type="Int32" />
+          <NavigationProperty Name="Tbl_Musteriler" Relationship="Self.FK_TBL_SEPETLER_Tbl_Musteriler" FromRole="TBL_SEPETLER" ToRole="Tbl_Musteriler" />
+          <NavigationProperty Name="Tbl_Urunler" Relationship="Self.FK_TBL_SEPETLER_Tbl_Urunler" FromRole="TBL_SEPETLER" ToRole="Tbl_Urunler" />
+        </EntityType>
+        <EntityType Name="Tbl_Urunler">
+          <Key>
+            <PropertyRef Name="URUNID" />
+          </Key>
+          <Property Name="URUNID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SATICIUID" Type="Int32" />
+          <Property Name="URUNAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="URUNMARKA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="URUNKATEGORI" Type="Int32" />
+          <Property Name="URUNFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="URUNSTOK" Type="Int32" />
+          <Property Name="DURUM" Type="Boolean" />
+          <Property Name="URUNFOTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="URUNDETAY" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Tbl_Kategoriler" Relationship="Self.FK_Tbl_Urunler_Tbl_Kategoriler" FromRole="Tbl_Urunler" ToRole="Tbl_Kategoriler" />
+          <NavigationProperty Name="Tbl_Saticilar" Relationship="Self.FK_Tbl_Urunler_Tbl_Saticilar" FromRole="Tbl_Urunler" ToRole="Tbl_Saticilar" />
+          <NavigationProperty Name="Tbl_Satislar" Relationship="Self.FK_Tbl_Satislar_Tbl_Urunler" FromRole="Tbl_Urunler" ToRole="Tbl_Satislar" />
+          <NavigationProperty Name="TBL_SEPETLER" Relationship="Self.FK_TBL_SEPETLER_Tbl_Urunler" FromRole="Tbl_Urunler" ToRole="TBL_SEPETLER" />
+          <NavigationProperty Name="Tbl_Yorumlar" Relationship="Self.FK_Tbl_Yorumlar_Tbl_Urunler" FromRole="Tbl_Urunler" ToRole="Tbl_Yorumlar" />
+        </EntityType>
+        <EntityType Name="Tbl_Yorumlar">
+          <Key>
+            <PropertyRef Name="YORUMID" />
+          </Key>
+          <Property Name="YORUMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MUSTERIYID" Type="Int32" />
+          <Property Name="YORUMMETNI" Type="String" MaxLength="480" FixedLength="false" Unicode="false" />
+          <Property Name="URUNYID" Type="Int32" />
+          <NavigationProperty Name="Tbl_Musteriler" Relationship="Self.FK_Tbl_Yorumlar_Tbl_Musteriler" FromRole="Tbl_Yorumlar" ToRole="Tbl_Musteriler" />
+          <NavigationProperty Name="Tbl_Urunler" Relationship="Self.FK_Tbl_Yorumlar_Tbl_Urunler" FromRole="Tbl_Yorumlar" ToRole="Tbl_Urunler" />
+        </EntityType>
+        <Association Name="FK_TBL_MESAJLAR_Tbl_Adminler">
+          <End Role="Tbl_Adminler" Type="Self.Tbl_Adminler" Multiplicity="0..1" />
+          <End Role="TBL_MESAJLAR" Type="Self.TBL_MESAJLAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Adminler">
+              <PropertyRef Name="ADMINID" />
+            </Principal>
+            <Dependent Role="TBL_MESAJLAR">
+              <PropertyRef Name="ALAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Urunler_Tbl_Kategoriler">
+          <End Role="Tbl_Kategoriler" Type="Self.Tbl_Kategoriler" Multiplicity="0..1" />
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Kategoriler">
+              <PropertyRef Name="KATEGORIID" />
+            </Principal>
+            <Dependent Role="Tbl_Urunler">
+              <PropertyRef Name="URUNKATEGORI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_MESAJLAR_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="0..1" />
+          <End Role="TBL_MESAJLAR" Type="Self.TBL_MESAJLAR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="TBL_MESAJLAR">
+              <PropertyRef Name="GONDEREN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="MUSTERI" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SEPETLER_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="1" />
+          <End Role="TBL_SEPETLER" Type="Self.TBL_SEPETLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="TBL_SEPETLER">
+              <PropertyRef Name="MUSTERISID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Yorumlar_Tbl_Musteriler">
+          <End Role="Tbl_Musteriler" Type="Self.Tbl_Musteriler" Multiplicity="0..1" />
+          <End Role="Tbl_Yorumlar" Type="Self.Tbl_Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Musteriler">
+              <PropertyRef Name="MUSTERIID" />
+            </Principal>
+            <Dependent Role="Tbl_Yorumlar">
+              <PropertyRef Name="MUSTERIYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Personeller">
+          <End Role="Tbl_Personeller" Type="Self.Tbl_Personeller" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Personeller">
+              <PropertyRef Name="PERSONELID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="PERSONEL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Saticilar">
+          <End Role="Tbl_Saticilar" Type="Self.Tbl_Saticilar" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Saticilar">
+              <PropertyRef Name="SATICID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="SATICISID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Urunler_Tbl_Saticilar">
+          <End Role="Tbl_Saticilar" Type="Self.Tbl_Saticilar" Multiplicity="0..1" />
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Saticilar">
+              <PropertyRef Name="SATICID" />
+            </Principal>
+            <Dependent Role="Tbl_Urunler">
+              <PropertyRef Name="SATICIUID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Satislar_Tbl_Urunler">
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="0..1" />
+          <End Role="Tbl_Satislar" Type="Self.Tbl_Satislar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urunler">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="Tbl_Satislar">
+              <PropertyRef Name="URUN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBL_SEPETLER_Tbl_Urunler">
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="0..1" />
+          <End Role="TBL_SEPETLER" Type="Self.TBL_SEPETLER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urunler">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="TBL_SEPETLER">
+              <PropertyRef Name="URUNSID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tbl_Yorumlar_Tbl_Urunler">
+          <End Role="Tbl_Urunler" Type="Self.Tbl_Urunler" Multiplicity="0..1" />
+          <End Role="Tbl_Yorumlar" Type="Self.Tbl_Yorumlar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Urunler">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="Tbl_Yorumlar">
+              <PropertyRef Name="URUNYID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_e_SATISEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Adminler" EntityType="Self.Tbl_Adminler" />
+          <EntitySet Name="Tbl_Duyurular" EntityType="Self.Tbl_Duyurular" />
+          <EntitySet Name="Tbl_Kategoriler" EntityType="Self.Tbl_Kategoriler" />
+          <EntitySet Name="TBL_MESAJLAR" EntityType="Self.TBL_MESAJLAR" />
+          <EntitySet Name="Tbl_Musteriler" EntityType="Self.Tbl_Musteriler" />
+          <EntitySet Name="Tbl_Personeller" EntityType="Self.Tbl_Personeller" />
+          <EntitySet Name="Tbl_Saticilar" EntityType="Self.Tbl_Saticilar" />
+          <EntitySet Name="Tbl_Satislar" EntityType="Self.Tbl_Satislar" />
+          <EntitySet Name="TBL_SEPETLER" EntityType="Self.TBL_SEPETLER" />
+          <EntitySet Name="Tbl_Urunler" EntityType="Self.Tbl_Urunler" />
+          <EntitySet Name="Tbl_Yorumlar" EntityType="Self.Tbl_Yorumlar" />
+          <AssociationSet Name="FK_TBL_MESAJLAR_Tbl_Adminler" Association="Self.FK_TBL_MESAJLAR_Tbl_Adminler">
+            <End Role="Tbl_Adminler" EntitySet="Tbl_Adminler" />
+            <End Role="TBL_MESAJLAR" EntitySet="TBL_MESAJLAR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Urunler_Tbl_Kategoriler" Association="Self.FK_Tbl_Urunler_Tbl_Kategoriler">
+            <End Role="Tbl_Kategoriler" EntitySet="Tbl_Kategoriler" />
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_MESAJLAR_Tbl_Musteriler" Association="Self.FK_TBL_MESAJLAR_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="TBL_MESAJLAR" EntitySet="TBL_MESAJLAR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Musteriler" Association="Self.FK_Tbl_Satislar_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SEPETLER_Tbl_Musteriler" Association="Self.FK_TBL_SEPETLER_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="TBL_SEPETLER" EntitySet="TBL_SEPETLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Yorumlar_Tbl_Musteriler" Association="Self.FK_Tbl_Yorumlar_Tbl_Musteriler">
+            <End Role="Tbl_Musteriler" EntitySet="Tbl_Musteriler" />
+            <End Role="Tbl_Yorumlar" EntitySet="Tbl_Yorumlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Personeller" Association="Self.FK_Tbl_Satislar_Tbl_Personeller">
+            <End Role="Tbl_Personeller" EntitySet="Tbl_Personeller" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Saticilar" Association="Self.FK_Tbl_Satislar_Tbl_Saticilar">
+            <End Role="Tbl_Saticilar" EntitySet="Tbl_Saticilar" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Urunler_Tbl_Saticilar" Association="Self.FK_Tbl_Urunler_Tbl_Saticilar">
+            <End Role="Tbl_Saticilar" EntitySet="Tbl_Saticilar" />
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Satislar_Tbl_Urunler" Association="Self.FK_Tbl_Satislar_Tbl_Urunler">
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+            <End Role="Tbl_Satislar" EntitySet="Tbl_Satislar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBL_SEPETLER_Tbl_Urunler" Association="Self.FK_TBL_SEPETLER_Tbl_Urunler">
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+            <End Role="TBL_SEPETLER" EntitySet="TBL_SEPETLER" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Yorumlar_Tbl_Urunler" Association="Self.FK_Tbl_Yorumlar_Tbl_Urunler">
+            <End Role="Tbl_Urunler" EntitySet="Tbl_Urunler" />
+            <End Role="Tbl_Yorumlar" EntitySet="Tbl_Yorumlar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tbl_Duyurular_Tbl_Adminler" Association="DB_e_SATISModel.FK_Tbl_Duyurular_Tbl_Adminler">
+            <End Role="Tbl_Adminler" EntitySet="Tbl_Adminler" />
+            <End Role="Tbl_Duyurular" EntitySet="Tbl_Duyurular" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK_Tbl_Duyurular_Tbl_Adminler">
+          <End Type="DB_e_SATISModel.Tbl_Adminler" Role="Tbl_Adminler" Multiplicity="0..1" />
+          <End Type="DB_e_SATISModel.Tbl_Duyurular" Role="Tbl_Duyurular" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tbl_Adminler">
+              <PropertyRef Name="ADMINID" />
+            </Principal>
+            <Dependent Role="Tbl_Duyurular">
+              <PropertyRef Name="DUYURUYAPAN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_e_SATISModelStoreContainer" CdmEntityContainer="DB_e_SATISEntities">
+          <EntitySetMapping Name="Tbl_Adminler">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Adminler">
+              <MappingFragment StoreEntitySet="Tbl_Adminler">
+                <ScalarProperty Name="ADMINID" ColumnName="ADMINID" />
+                <ScalarProperty Name="ADMINADSOYAD" ColumnName="ADMINADSOYAD" />
+                <ScalarProperty Name="ADMINTELEFON" ColumnName="ADMINTELEFON" />
+                <ScalarProperty Name="ADMINMAIL" ColumnName="ADMINMAIL" />
+                <ScalarProperty Name="ADMINCINSIYET" ColumnName="ADMINCINSIYET" />
+                <ScalarProperty Name="ADMINKULLANICIADI" ColumnName="ADMINKULLANICIADI" />
+                <ScalarProperty Name="ADMINSIFRE" ColumnName="ADMINSIFRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Duyurular">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Duyurular">
+              <MappingFragment StoreEntitySet="Tbl_Duyurular">
+                <ScalarProperty Name="DUYURUID" ColumnName="DUYURUID" />
+                <ScalarProperty Name="DUYURUMETNI" ColumnName="DUYURUMETNI" />
+                <ScalarProperty Name="DUYURUYAPAN" ColumnName="DUYURUYAPAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Kategoriler">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Kategoriler">
+              <MappingFragment StoreEntitySet="Tbl_Kategoriler">
+                <ScalarProperty Name="KATEGORIID" ColumnName="KATEGORIID" />
+                <ScalarProperty Name="KATEGORIAD" ColumnName="KATEGORIAD" />
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_MESAJLAR">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.TBL_MESAJLAR">
+              <MappingFragment StoreEntitySet="TBL_MESAJLAR">
+                <ScalarProperty Name="MESAJID" ColumnName="MESAJID" />
+                <ScalarProperty Name="GONDEREN" ColumnName="GONDEREN" />
+                <ScalarProperty Name="ALAN" ColumnName="ALAN" />
+                <ScalarProperty Name="MESAJICERIK" ColumnName="MESAJICERIK" />
+                <ScalarProperty Name="KONU" ColumnName="KONU" />
+                <ScalarProperty Name="ADMINYANIT" ColumnName="ADMINYANIT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Musteriler">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Musteriler">
+              <MappingFragment StoreEntitySet="Tbl_Musteriler">
+                <ScalarProperty Name="MUSTERIID" ColumnName="MUSTERIID" />
+                <ScalarProperty Name="MUSTERIAD" ColumnName="MUSTERIAD" />
+                <ScalarProperty Name="MUSTERISOYAD" ColumnName="MUSTERISOYAD" />
+                <ScalarProperty Name="MUSTERIDURUM" ColumnName="MUSTERIDURUM" />
+                <ScalarProperty Name="MUSTERIKULLANICIADI" ColumnName="MUSTERIKULLANICIADI" />
+                <ScalarProperty Name="MUSTERISIFRE" ColumnName="MUSTERISIFRE" />
+                <ScalarProperty Name="MUSTERITELEFON" ColumnName="MUSTERITELEFON" />
+                <ScalarProperty Name="MUSTERIMAIL" ColumnName="MUSTERIMAIL" />
+                <ScalarProperty Name="MUSTERIADRES" ColumnName="MUSTERIADRES" />
+                <ScalarProperty Name="MUSTERIBUTCE" ColumnName="MUSTERIBUTCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Personeller">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Personeller">
+              <MappingFragment StoreEntitySet="Tbl_Personeller">
+                <ScalarProperty Name="PERSONELID" ColumnName="PERSONELID" />
+                <ScalarProperty Name="PERSONELADSOYAD" ColumnName="PERSONELADSOYAD" />
+                <ScalarProperty Name="PERSONELTELEFON" ColumnName="PERSONELTELEFON" />
+                <ScalarProperty Name="PERSONELMAIL" ColumnName="PERSONELMAIL" />
+                <ScalarProperty Name="PERSONELCINSIYET" ColumnName="PERSONELCINSIYET" />
+                <ScalarProperty Name="PERSONELDURUM" ColumnName="PERSONELDURUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Saticilar">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Saticilar">
+              <MappingFragment StoreEntitySet="Tbl_Saticilar">
+                <ScalarProperty Name="SATICID" ColumnName="SATICID" />
+                <ScalarProperty Name="SATICIADSOYAD" ColumnName="SATICIADSOYAD" />
+                <ScalarProperty Name="SATICITELEFON" ColumnName="SATICITELEFON" />
+                <ScalarProperty Name="SATICIMAIL" ColumnName="SATICIMAIL" />
+                <ScalarProperty Name="SATICICINSIYET" ColumnName="SATICICINSIYET" />
+                <ScalarProperty Name="SATICIKULLANICIADI" ColumnName="SATICIKULLANICIADI" />
+                <ScalarProperty Name="SATICISIFRE" ColumnName="SATICISIFRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Satislar">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Satislar">
+              <MappingFragment StoreEntitySet="Tbl_Satislar">
+                <ScalarProperty Name="SATISID" ColumnName="SATISID" />
+                <ScalarProperty Name="URUN" ColumnName="URUN" />
+                <ScalarProperty Name="PERSONEL" ColumnName="PERSONEL" />
+                <ScalarProperty Name="MUSTERI" ColumnName="MUSTERI" />
+                <ScalarProperty Name="FIYAT" ColumnName="FIYAT" />
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+                <ScalarProperty Name="SATICISID" ColumnName="SATICISID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SEPETLER">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.TBL_SEPETLER">
+              <MappingFragment StoreEntitySet="TBL_SEPETLER">
+                <ScalarProperty Name="SEPETID" ColumnName="SEPETID" />
+                <ScalarProperty Name="MUSTERISID" ColumnName="MUSTERISID" />
+                <ScalarProperty Name="URUNSID" ColumnName="URUNSID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Urunler">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Urunler">
+              <MappingFragment StoreEntitySet="Tbl_Urunler">
+                <ScalarProperty Name="URUNID" ColumnName="URUNID" />
+                <ScalarProperty Name="SATICIUID" ColumnName="SATICIUID" />
+                <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+                <ScalarProperty Name="URUNMARKA" ColumnName="URUNMARKA" />
+                <ScalarProperty Name="URUNKATEGORI" ColumnName="URUNKATEGORI" />
+                <ScalarProperty Name="URUNFIYAT" ColumnName="URUNFIYAT" />
+                <ScalarProperty Name="URUNSTOK" ColumnName="URUNSTOK" />
+                <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+                <ScalarProperty Name="URUNFOTO" ColumnName="URUNFOTO" />
+                <ScalarProperty Name="URUNDETAY" ColumnName="URUNDETAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Yorumlar">
+            <EntityTypeMapping TypeName="DB_e_SATISModel.Tbl_Yorumlar">
+              <MappingFragment StoreEntitySet="Tbl_Yorumlar">
+                <ScalarProperty Name="YORUMID" ColumnName="YORUMID" />
+                <ScalarProperty Name="MUSTERIYID" ColumnName="MUSTERIYID" />
+                <ScalarProperty Name="YORUMMETNI" ColumnName="YORUMMETNI" />
+                <ScalarProperty Name="URUNYID" ColumnName="URUNYID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,158 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MUSTERI.master.cs" Inherits="MT_e_SATIS.MUSTERI" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <style>
+        .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            float: left;
+            position: center;
+            width: 300px;
+        }
+
+        .menu ul li ul {
+            display: none;
+        }
+
+        .menu ul li:hover ul {
+            display: block;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            background: black;
+            display: block;
+            color: white;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            /* border-bottom: 2px solid red;*/
+            border-left: 1px solid #595959;
+            padding: 5px;
+        }
+
+        .menu ul li ul li a {
+            background: black;
+            text-align: left;
+            padding: 5px;
+            border-bottom: 1px solid #333;
+            font-size: .8em;
+        }
+
+        .menu li a:hover {
+            background: black;
+            transition: .5s;
+        }
+
+        .menu ul li ul li a:hover {
+            padding-left: 15px;
+        }
+        /*.auto-style2 {
+            width: 170px;
+            position: relative;
+            left: -1px;
+            top: 22px;
+        }
+        .auto-style3 {
+            width: 364px;
+        }
+        .auto-style4 {
+            position: relative;
+            left: -117px;
+            top: 21px;
+            width: 170px;
+        }
+        .auto-style5 {
+            position: relative;
+            left: 425px;
+            top: -5px;
+        }
+        .auto-style6 {
+            position: relative;
+            left: -343px;
+            top: 21px;
+            width: 170px;
+        }
+        .auto-style9 {
+            position: relative;
+            left: 5px;
+            top: -19px;
+            margin-top: 0;
+        }
+        .auto-style11 {
+            position: relative;
+            left: -232px;
+            top: 21px;
+            width: 170px;
+        }
+        .auto-style13 {
+            position: relative;
+            left: 1138px;
+            top: -6px;
+            width: 171px;
+        }
+        .auto-style14 {
+            position: relative;
+            left: -260px;
+            top: 22px;
+            width: 170px;
+            right: 265px;
+        }
+        .auto-style15 {
+            position: relative;
+            left: -452px;
+            top: 12px;
+            width: 170px;
+        }*/
+    </style>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+    <title>EKSİĞİN KALMASIN</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color: transparent; background-image: url(/beyazwp6.jpg); background-position: center center;background-repeat:no-repeat;margin:0px 0px 0px 0px;background-size:100%;padding:0px 0px 0px 0px;background-attachment:fixed">
+    <form id="form1" runat="server" style="position: relative" method="post">
+    <br />
+
+    <asp:Label ID="Label1" runat="server" Text="EKSİĞİN KALMASIN" Font-Size="35pt" Font-Italic="True" BorderColor="Black" BorderWidth="3px" BorderStyle="None" CssClass="auto-style5" Font-Bold="True" Font-Overline="False" Font-Strikeout="False" ForeColor="#0066FF"></asp:Label>
+
+    <br />
+    <br />
+    <nav class="menu" style="width:1500PX" >
+        <ul class="auto-style9">
+            <li class="auto-style3"><a href="\MUSTERIMODULU\MUSTERIKATEGORILER.aspx" class="auto-style2">KATEGORİLER</a>
+               <%-- <ul>
+                    <li><a href="#">BİSİKLET</a></li>
+                    <li><a href="#">KOZMETİK</a></li>
+                    <li><a href="#">SPOR</a></li>
+                </ul>--%>
+            </li>
+            <li><a href="\MUSTERIMODULU\MUSTERIURUNLER.aspx" class="auto-style4">ÜRÜNLER</a></li>
+            <li ><a href="\MUSTERIBILGIGUNCELLE\MUSTERIBILGIGUNCELLE.aspx" class="auto-style11">AYARLAR</a></li>
+            <li ><a href="\MUSTERIMODULU\DUYURULAR.aspx" class="auto-style6">DUYURULAR</a></li>
+            <li><a href="\MUSTERIMODULU\MESAJLARIM.aspx" class="auto-style14">MESAJLARIM</a></li>
+            <li><a href="\MUSTERIMODULU\MUSTERIURUNISLEMLERI\MUSTERISEPET.aspx?URUNID=0" class="auto-style15">SEPETİM</a></li>
+            <li ><a href="\KULLANICISEC.aspx" class="auto-style13">ÇIKIŞ YAP</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+    </div>
+&nbsp;<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+
+    </form>
+
+</body>
+</html>
